@@ -1,0 +1,57 @@
+{
+  "name": "vscode-git-notify",
+  "displayName": "Git Repository Notifications",
+  "description": "Receive notifications about Git repository updates",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Git Notify",
+      "properties": {
+        "gitNotify.serverUrl": {
+          "type": "string",
+          "default": "ws://10.20.64.60:8080/ws",
+          "description": "WebSocket server URL for Git notifications"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "gitNotify.connect",
+        "title": "Connect to Git Notification Server"
+      },
+      {
+        "command": "gitNotify.disconnect",
+        "title": "Disconnect from Git Notification Server"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "@types/vscode": "^1.80.0",
+    "@types/ws": "^8.5.5",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint": "^8.26.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "ws": "^8.14.2"
+  }
+}
