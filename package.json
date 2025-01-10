@@ -2,6 +2,11 @@
   "name": "vscode-git-notify",
   "displayName": "Git Repository Notifications",
   "description": "Receive notifications about Git repository updates",
+  "publisher": "LeviFitzpatrck",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FRC-2064/vscode-git-notify.git"
+  },
   "version": "0.1.0",
   "engines": {
     "vscode": "^1.80.0"
